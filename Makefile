@@ -12,4 +12,33 @@
 
 NAME = pushswap.a
 
+LIBFT = libft/libft.a
 
+CHECKER = 
+
+PUSH_SWAP =
+
+CFLAGS = -Wall -Werror -Wextra 
+
+SRC = *.c
+
+OBJ = *.o
+
+//LINKLIB = @gcc-I. -o
+
+all: $(NAME)
+
+$(NAME): 
+
+
+
+norm:
+	find . -type f -name "*.[c|h]" -exec norminette {} \;
+
+clean:
+
+
+fclean:
+
+
+re: fclean all

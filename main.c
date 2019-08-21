@@ -6,7 +6,7 @@
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 10:34:42 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/08/14 11:36:36 by gpanyana         ###   ########.fr       */
+/*   Updated: 2019/08/12 14:34:48 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,18 +56,18 @@ void	printlist(struct Node* head)
 	while (g != NULL)
 	{
 		ft_putnbr(g->stack_a);
-		ft_putstr("\t");
+		ft_putstr("\t\t");
 		(g->stack_b == 'x') ? ft_putstr(" ") : ft_putnbr(g->stack_b);
 		ft_putchar('\n');
 		g = g->next;
 	}
-	ft_putstr("_\t_\n");
-	ft_putstr("a\tb\n");
+	ft_putstr("_\t\t_\n");
+	ft_putstr("a\t\tb\n");
 }
 
 int		main(void)
 {
-	size_t		i;
+	int			i;
 	struct Node	*head;
 
 	i = 5;
