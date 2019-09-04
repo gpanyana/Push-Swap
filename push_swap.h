@@ -6,19 +6,20 @@
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 02:25:27 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/08/10 02:57:22 by gpanyana         ###   ########.fr       */
+/*   Updated: 2019/09/04 17:24:35 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# include "libft.h"
 # define TRUE (1)
 # define FALSE (0)
 # define ERROR (-1)
 # define DONE (2)
 # define INTNEGLIM (-2147483648)
 # define INTPOSLIM (2147483647)
-#include "libft/libft.h"
 
 typedef struct		s_node
 {
