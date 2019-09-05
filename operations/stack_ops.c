@@ -6,21 +6,33 @@
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/23 16:14:38 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/08/23 16:15:04 by gpanyana         ###   ########.fr       */
+/*   Updated: 2019/09/05 18:53:49 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	remove_elem(t_node **from_stack)
+#include "push_swap.h"
+
+void	generate_stacks()
 {
-	t_node		*head;
-	t_node		*second;
-	t_node		temp_store;
-
-	temp_store = NULL;
-
-
 }
 
-void	add_elem(t_node **to_stack)
+void	generate_rndm_int()
+
+void	error(int err)
 {
+	if (err == 0 || err == -1)
+	{
+		ft_putstr("ERROR\n");
+		exit(0);
+	}
+	return ;
+}
+
+int		main(int argc, char **argv)
+{
+	t_node	g;
+
+	if (argc == 1)
+		return (0);
+	..
 }
