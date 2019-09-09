@@ -1,40 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_ops.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/23 16:14:38 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/09/09 17:29:51 by gpanyana         ###   ########.fr       */
+/*   Created: 2019/06/24 10:12:19 by gpanyana          #+#    #+#             */
+/*   Updated: 2019/06/24 10:42:41 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	generate_stacks()
+int		ft_isspace(int c)
 {
-}
-
-int		rndm_int(void)
-{
-}
-
-void	error(int err)
-{
-	if (err == 0 || err == -1)
-	{
-		ft_putstr("ERROR\n");
-		exit(0);
-	}
-	return ;
-}
-
-int		main(int argc, char **argv)
-{
-	t_node	g;
-
-	if (argc == 1)
-		return (0);
-	..
+	return (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r' \
+			|| c == '\f' || c == ' ');
 }

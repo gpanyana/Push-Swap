@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_ops.c                                        :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/23 16:14:38 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/09/09 17:29:51 by gpanyana         ###   ########.fr       */
+/*   Created: 2019/06/25 10:29:03 by gpanyana          #+#    #+#             */
+/*   Updated: 2019/06/25 16:02:42 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	generate_stacks()
+size_t		ft_intlen(int n)
 {
-}
+	size_t	len;
 
-int		rndm_int(void)
-{
-}
-
-void	error(int err)
-{
-	if (err == 0 || err == -1)
+	if (n == 0)
+		return (1);
+	len = 0;
+	if (n < 0)
+		len++;
+	while (n)
 	{
-		ft_putstr("ERROR\n");
-		exit(0);
+		n /= 10;
+		len++;
 	}
-	return ;
-}
-
-int		main(int argc, char **argv)
-{
-	t_node	g;
-
-	if (argc == 1)
-		return (0);
-	..
+	return (len);
 }

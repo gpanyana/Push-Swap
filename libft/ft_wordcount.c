@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_ops.c                                        :+:      :+:    :+:   */
+/*   ft_wordcount.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/23 16:14:38 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/09/09 17:29:51 by gpanyana         ###   ########.fr       */
+/*   Created: 2019/06/25 15:50:11 by gpanyana          #+#    #+#             */
+/*   Updated: 2019/06/25 17:15:49 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	generate_stacks()
+size_t		ft_wordcount(const char *s, char c)
 {
-}
+	size_t			wc;
+	unsigned int	i;
 
-int		rndm_int(void)
-{
-}
-
-void	error(int err)
-{
-	if (err == 0 || err == -1)
+	wc = 0;
+	i = 0;
+	while (s[i])
 	{
-		ft_putstr("ERROR\n");
-		exit(0);
+		if (s[i] != c)
+			wc++;
+		while (s[i] != c && s[i + 1])
+		{
+			i++;
+		}
+		i++;
 	}
-	return ;
-}
-
-int		main(int argc, char **argv)
-{
-	t_node	g;
-
-	if (argc == 1)
-		return (0);
-	..
+	return (wc);
 }

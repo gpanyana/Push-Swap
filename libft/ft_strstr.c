@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_ops.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/23 16:14:38 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/09/09 17:29:51 by gpanyana         ###   ########.fr       */
+/*   Created: 2019/06/03 14:12:36 by gpanyana          #+#    #+#             */
+/*   Updated: 2019/06/04 12:45:47 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	generate_stacks()
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-}
+	size_t i;
+	size_t j;
 
-int		rndm_int(void)
-{
-}
-
-void	error(int err)
-{
-	if (err == 0 || err == -1)
+	if (needle[0] == '\0' && haystack[0] == '\0')
+		return ((char *)haystack);
+	i = 0;
+	while (haystack[i] != '\0')
 	{
-		ft_putstr("ERROR\n");
-		exit(0);
+		j = 0;
+		while (needle[j] != '\0' && haystack[i + j] == needle[j])
+			j++;
+		if (needle[j] == '\0')
+			return ((char *)haystack + i);
+		i++;
 	}
-	return ;
-}
-
-int		main(int argc, char **argv)
-{
-	t_node	g;
-
-	if (argc == 1)
-		return (0);
-	..
+	return (NULL);
 }

@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_ops.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/23 16:14:38 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/09/09 17:29:51 by gpanyana         ###   ########.fr       */
+/*   Created: 2019/06/24 13:53:11 by gpanyana          #+#    #+#             */
+/*   Updated: 2019/06/25 13:47:27 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	generate_stacks()
+char	*ft_itoa(int n)
 {
-}
+	int		i;
+	int		len;
+	char	*str;
 
-int		rndm_int(void)
-{
-}
-
-void	error(int err)
-{
-	if (err == 0 || err == -1)
+	len = ft_intlen(n);
+	if (!(str = (char *)malloc(len + 1)))
+		return (NULL);
+	str[len] = '\0';
+	if (n < 0)
 	{
-		ft_putstr("ERROR\n");
-		exit(0);
+		str[0] = '-';
+		i = 1;
 	}
-	return ;
-}
-
-int		main(int argc, char **argv)
-{
-	t_node	g;
-
-	if (argc == 1)
-		return (0);
-	..
+	else
+		i = 0;
+	while (len-- > i)
+	{
+		str[len] = 48 + n % 10 * (n < 0 ? -1 : 1);
+		n /= 10;
+	}
+	return (str);
 }

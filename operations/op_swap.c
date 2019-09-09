@@ -6,7 +6,7 @@
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 00:41:23 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/09/05 15:48:07 by gpanyana         ###   ########.fr       */
+/*   Updated: 2019/09/06 14:05:27 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ int		op_swap_a(t_node *g, int move)
 		temp = g->stack_a->value;
 		g->stack_a->value = g->stack_a->next->value;
 		g->stack_a->next->value = temp;
-		move == ONE ? add_move(g, "sa") : 0;
-		return (1);
+//		move == ONE ? add_move(g, "sa") : 0;
+//		return (1);
 	}
 	return (0);
 }

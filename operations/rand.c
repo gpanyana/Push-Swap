@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_ops.c                                        :+:      :+:    :+:   */
+/*   rand.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/23 16:14:38 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/09/09 17:29:51 by gpanyana         ###   ########.fr       */
+/*   Created: 2019/09/09 15:08:01 by gpanyana          #+#    #+#             */
+/*   Updated: 2019/09/09 15:14:57 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
 
-void	generate_stacks()
+int		main(void)
 {
-}
+	int	num;
 
-int		rndm_int(void)
-{
-}
+	srand((unsigned int) time(0) + getpid());
+	printf("\nbruh!\n");
+	num = rand();
 
-void	error(int err)
-{
-	if (err == 0 || err == -1)
-	{
-		ft_putstr("ERROR\n");
-		exit(0);
-	}
-	return ;
-}
+	printf ("%d\n", num);
 
-int		main(int argc, char **argv)
-{
-	t_node	g;
-
-	if (argc == 1)
-		return (0);
-	..
+	return EXIT_SUCCESS;
 }

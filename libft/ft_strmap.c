@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_ops.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/23 16:14:38 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/09/09 17:29:51 by gpanyana         ###   ########.fr       */
+/*   Created: 2019/06/14 23:05:12 by gpanyana          #+#    #+#             */
+/*   Updated: 2019/06/15 00:50:48 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	generate_stacks()
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-}
+	size_t	i;
+	char	*fresh;
 
-int		rndm_int(void)
-{
-}
-
-void	error(int err)
-{
-	if (err == 0 || err == -1)
+	fresh = NULL;
+	i = 0;
+	if (f && s)
 	{
-		ft_putstr("ERROR\n");
-		exit(0);
+		if (!(fresh = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+			return (NULL);
+		while (s[i] != '\0')
+		{
+			fresh[i] = s[i];
+			i++;
+		}
+		fresh[i] = '\0';
+		i = 0;
+		while (fresh[i] != '\0')
+		{
+			fresh[i] = f(fresh[i]);
+			i++;
+		}
 	}
-	return ;
-}
-
-int		main(int argc, char **argv)
-{
-	t_node	g;
-
-	if (argc == 1)
-		return (0);
-	..
+	return (fresh);
 }

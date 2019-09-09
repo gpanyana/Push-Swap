@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_ops.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/23 16:14:38 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/09/09 17:29:51 by gpanyana         ###   ########.fr       */
+/*   Created: 2019/06/12 14:46:09 by gpanyana          #+#    #+#             */
+/*   Updated: 2019/06/25 18:53:10 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	generate_stacks()
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-}
+	unsigned char	*srcs;
+	unsigned char	*dsts;
 
-int		rndm_int(void)
-{
-}
-
-void	error(int err)
-{
-	if (err == 0 || err == -1)
-	{
-		ft_putstr("ERROR\n");
-		exit(0);
-	}
-	return ;
-}
-
-int		main(int argc, char **argv)
-{
-	t_node	g;
-
-	if (argc == 1)
-		return (0);
-	..
+	srcs = (unsigned char *)src;
+	dsts = (unsigned char *)dst;
+	if (src == dst)
+		return (dst);
+	if (srcs < dsts)
+		while (len--)
+			dsts[len] = srcs[len];
+	else
+		ft_memcpy(dsts, srcs, len);
+	return (dsts);
 }
