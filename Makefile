@@ -6,7 +6,7 @@
 #    By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/16 19:27:39 by gpanyana          #+#    #+#              #
-#    Updated: 2019/08/26 14:58:08 by gpanyana         ###   ########.fr        #
+#    Updated: 2019/09/10 12:35:54 by gpanyana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC = *.c
 
 OBJ = *.o
 
-//LINKLIB = @gcc-I. -o
+//LINKLIB = @gcc -I. -o
 
 all: $(NAME)
 
@@ -42,3 +42,5 @@ fclean:
 
 
 re: fclean all
+
+.PHONY: 
