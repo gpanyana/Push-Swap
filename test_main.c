@@ -41,8 +41,24 @@ void	push(t_list **dst, t_list **src)
 	detached->next = NULL;
 	ft_lstadd(dst, detached);
 }
+/*
+void	rotate(t_list **alst)
+	if (!*dst)
+		return ;
+	if(!(*dst)->next)
+		return ;
+	t_list *head = *dst;
+	*dst = (*dst)->next;
+	t_list *cur = *dst;
+	while (cur->next->next != NULL)
+	{
+		cur = cur->next;
+	}
+	head = cur->next;
+	head->next = NULL;
+}*/
 
-void	rotate(t_list **src)
+void	rev_rotate(t_list **src)
 {
 	if (!*src)
 		return ;
@@ -50,15 +66,17 @@ void	rotate(t_list **src)
 		return ;
 	t_list *detached = *src;
 	*src = (*src)->next;
-	detached->next = NULL;
 	t_list *cur = *src;
+	detached->next = NULL;
+//	t_list *cur = *src;
 	while (cur->next->next != NULL)
 	{
 		cur = cur->next;
 	}
+	ft_lstadd(src, detached);
 	detached = cur->next;
 	cur->next = NULL;
-	ft_lstadd(src, detached);	
+//	ft_lstadd(src, detached);	
 }
 
 int		main(int ac, char **av)
@@ -77,7 +95,7 @@ int		main(int ac, char **av)
 		i++;
 	}
 	t_list *cur;
-	rotate(&a);
+	rev_rotate(&a);
 	cur = a;
 	while (cur)
 	{
