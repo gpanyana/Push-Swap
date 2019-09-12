@@ -26,7 +26,6 @@ void	push_end(t_list **dst, t_list **src)
 	{
 		cur = cur->next;
 	}
-	printf("%i\n", *(int*)cur->next->content);	// prints out the 2nd last node
 	t_list *link = cur->next;
 	cur->next = NULL;
 	ft_lstadd(dst, link);
@@ -41,22 +40,17 @@ void	push(t_list **dst, t_list **src)
 	detached->next = NULL;
 	ft_lstadd(dst, detached);
 }
-/*
-void	rotate(t_list **alst)
-	if (!*dst)
+
+void	rotate(t_list **src)
+{
+	if (!*src)
 		return ;
-	if(!(*dst)->next)
+	if(!(*src)->next)
 		return ;
-	t_list *head = *dst;
-	*dst = (*dst)->next;
-	t_list *cur = *dst;
-	while (cur->next->next != NULL)
-	{
-		cur = cur->next;
-	}
-	head = cur->next;
-	head->next = NULL;
-}*/
+	t_list *cur = *src;
+	*src = (*src)->next;
+	ft_lstaddend(src, cur);
+}
 
 void	rev_rotate(t_list **src)
 {
@@ -68,7 +62,6 @@ void	rev_rotate(t_list **src)
 	*src = (*src)->next;
 	t_list *cur = *src;
 	detached->next = NULL;
-//	t_list *cur = *src;
 	while (cur->next->next != NULL)
 	{
 		cur = cur->next;
@@ -76,7 +69,7 @@ void	rev_rotate(t_list **src)
 	ft_lstadd(src, detached);
 	detached = cur->next;
 	cur->next = NULL;
-//	ft_lstadd(src, detached);	
+	ft_lstadd(src, detached);	
 }
 
 int		main(int ac, char **av)
@@ -95,7 +88,7 @@ int		main(int ac, char **av)
 		i++;
 	}
 	t_list *cur;
-	rev_rotate(&a);
+	rotate(&a);
 	cur = a;
 	while (cur)
 	{
