@@ -2,7 +2,7 @@
 #include "push_swap.h"
 #include "stdio.h"
 
-void	swap(t_list **src)
+void	ft_lstswap(t_list **src)
 {
 	if (!*src)
 		return ;
@@ -13,7 +13,7 @@ void	swap(t_list **src)
 	(*src)->next->content = temp;
 }
 
-void	push_end(t_list **dst, t_list **src)
+void	ft_lstpushend(t_list **dst, t_list **src)
 {
 	if (!*src)
 	   return ;
@@ -31,7 +31,7 @@ void	push_end(t_list **dst, t_list **src)
 	ft_lstadd(dst, link);
 }
 
-void	push(t_list **dst, t_list **src)
+void	ft_lstpush(t_list **dst, t_list **src)
 {
 	if (!*src)
 		return ;
@@ -41,7 +41,7 @@ void	push(t_list **dst, t_list **src)
 	ft_lstadd(dst, detached);
 }
 
-void	rotate(t_list **src)
+void	ft_lstrotate(t_list **src)
 {
 	if (!*src)
 		return ;
@@ -52,7 +52,7 @@ void	rotate(t_list **src)
 	ft_lstaddend(src, cur);
 }
 
-void	rev_rotate(t_list **src)
+void	ft_lstrev_rotate(t_list **src)
 {
 	if (!*src)
 		return ;
@@ -88,7 +88,7 @@ int		main(int ac, char **av)
 		i++;
 	}
 	t_list *cur;
-	rotate(&a);
+	ft_lstrotate(&a);
 	cur = a;
 	while (cur)
 	{
