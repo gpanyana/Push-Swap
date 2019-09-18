@@ -6,14 +6,14 @@
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 02:25:27 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/09/17 17:57:16 by gpanyana         ###   ########.fr       */
+/*   Updated: 2019/09/05 18:41:20 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "libft.h"
 
 # define TRUE (1)
 # define FALSE (0)
@@ -22,29 +22,61 @@
 # define INTNEGLIM (-2147483648)
 # define INTPOSLIM (2147483647)
 
+enum { ONE, BOTH };
+//enum { INC, DEC };
+
+typedef struct		s_stack
+{
+	int				value;
+	struct s_stack	*next;
+}					t_stack;
+
+typedef struct		s_move
+{
+	char			*name;
+	struct s_move	*next;
+}					t_move;
+
+typedef struct		s_node		//as i use and declare new types, must add to this struct.
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	t_stack	*stack_end_a;
+	t_stack	*stack_end_b;
+	t_move	*move;
+	t_move	*move_end;
+}					t_node;
+
 
 /*
- *	ft_lstswap.c
+ *	op_swap.c
  */
 
-void	ft_lstswap(t_list **src);
+int		op_swap_a(t_node *g, int move);
+int		op_swap_b(t_node *g, int move);
+int		op_swap_ab(t_node *g);
 
 /*
- *	ft_lstpush.c
+ *	op_push.c
  */
 
-void	ft_lstpush(t_list **dst, t_list **src);
-void	ft_lstpushend(t_list **dst, t_list **src);
+int		op_push_a(t_node *g, int move);
+int		op_push_b(t_node *g, int move);
+int		op_push_ab(t_node *g);
 
 /*
- *	ft_lstrotate.c
+ *	op_rotate.c
  */
 
-void	ft_lstrotate(t_list **src);
+int		op_rotate_a(t_node *g, int move);
+int		op_rotate_b(t_node *g, int move);
+int		op_rotate_ab(t_node *g);
 
 /*
- *	ft_lstrevrotate.c
+ *	op_rev_rotate.c
  */
+int		op_rev_rotate_a(t_node *g, int move);
+int		op_rev_rotate_b(t_node *g, int move);
+int		op_rev_rotate_ab(t_node *g);
 
-void	ft_lstrevrotate(t_list **src);
 #endif

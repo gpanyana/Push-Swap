@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstrotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/17 18:13:50 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/09/17 18:49:44 by gpanyana         ###   ########.fr       */
+/*   Created: 2019/09/12 15:21:43 by gpanyana          #+#    #+#             */
+/*   Updated: 2019/09/12 15:23:41 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-/* v-scott
-int			main(int ac, char **av)
-{
-	t_stacks	*stacks;
+#include "libft.h"
 
-	if (ac > 1)
-	{
-		stacks = (t_stacks*)malloc(sizeof(t_stacks));
-		check_av(stacks, av, ac);
-		sort(stacks);
-		del_stacks(&stacks);
-	}
-	return (0);
-}*/
+void	ft_lstrotate(t_list **src)
+{
+	if (!*src)
+		return ;
+	if(!(*src)->next)
+		return ;
+	t_list *cur = *src;
+	*src = (*src)->next;
+	ft_lstaddend(src, cur);
+}
